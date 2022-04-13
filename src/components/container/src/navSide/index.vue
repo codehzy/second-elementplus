@@ -6,7 +6,7 @@
   >
     <el-menu-item index="1">
       <el-icon><el-icon-menu /></el-icon>
-      <span>导航 1</span>
+      <span>首页</span>
     </el-menu-item>
     <el-menu-item index="2">
       <el-icon><el-icon-menu /></el-icon>

@@ -5,21 +5,5 @@
 </template>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
-
-svg {
-  width: 1em;
-  height: 1em;
-}
-
-#app,
-html,
-body,
-.el-container,
-.el-menu {
-  height: 100%;
-}
+@import "./styles/base.scss";
 </style>
