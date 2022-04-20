@@ -20,51 +20,51 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import * as ElIcons from "@element-plus/icons-vue";
-import toLine from "../../../utils";
-import { useCopy } from "../../../hooks/useCopy";
+import { ref, watch } from 'vue'
+import * as ElIcons from '@element-plus/icons-vue'
+import toLine from '../../../utils'
+import { useCopy } from '../../../hooks/useCopy'
 
 const props = defineProps<{
   // 弹出框的标题
-  title: string;
+  title: string
   // 控制弹出框的显示与隐藏
-  visible: boolean;
-}>();
-const emits = defineEmits(["update:visible"]);
+  visible: boolean
+}>()
+const emits = defineEmits(['update:visible'])
 
 // 拷贝一份父组件传递过来visible
-const dialogVisible = ref<boolean>(props.visible);
+const dialogVisible = ref<boolean>(props.visible)
 
 const handleClick = () => {
   // 需要修改父组件数据
-  emits("update:visible", !props.visible);
-};
+  emits('update:visible', !props.visible)
+}
 
 // 点击图标
 const clickItem = (item: string) => {
-  let text = `<el-icon-${toLine(item)} />`;
+  let text = `<el-icon${toLine(item)} />`
   // 复制文本
-  useCopy(text);
+  useCopy(text)
   // 关闭弹框
-  dialogVisible.value = false;
-};
+  dialogVisible.value = false
+}
 
 // 监听visible变化，只能监听第一次的变化
 watch(
   () => props.visible,
   (val) => {
-    dialogVisible.value = val;
+    dialogVisible.value = val
   }
-);
+)
 
 // 监听组件内部的dialogVisible的变化
 watch(
   () => dialogVisible.value,
   (val) => {
-    emits("update:visible", val);
+    emits('update:visible', val)
   }
-);
+)
 </script>
 
 <style lang="scss" scoped>
