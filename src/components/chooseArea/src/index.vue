@@ -41,7 +41,7 @@
 
 <script lang="ts" setup>
 import { ref, watch, defineEmits } from 'vue'
-import allAreas from './lib/pca-code.json'
+import allAreas from '../lib/pca-code.json'
 
 console.log(allAreas)
 

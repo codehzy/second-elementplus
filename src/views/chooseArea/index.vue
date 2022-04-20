@@ -1,10 +1,8 @@
 <template>
-  <ChooseArea @change="changes"></ChooseArea>
+  <choose-area @change="changes"></choose-area>
 </template>
 
 <script lang="ts" setup>
-import ChooseArea from '../../components/chooseArea/index.vue'
-
 interface Data {
   code: string
   name: string
